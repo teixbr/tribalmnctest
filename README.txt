@@ -92,7 +92,7 @@ Abrir una ventana de terminal y ejecutar los siguientes comandos
 "server {
 listen 3200;
 listen [::]:3200;
-root /var/www/tribal/dist;
+root /var/www/tribal/dist/tribalfrontend;
 server_tokens off;
 index index.html index.htm;
 location / {
@@ -118,17 +118,23 @@ try_files $uri $uri/ /index.html =404;
 
 13) cd /home/ubuntu/tribalmnctest/frontend
 
-14) sudo apt-get update
+14) sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 
-15) sudo apt-get upgrade
+15) sudo apt-get install -y nodejs
 
-14) sudo apt install nodejs
+16) apt-get install -y build-essential
 
-15) sudo apt install npm
+17) sudo npm install -g @angular/cli
 
-16) sudo npm install -g @angular/cli
+18) sudo npm install 
 
-17) sudo npm install 
+19) ng build --prod
 
-18) ng build --prod
+20) cd /var/www
+
+21) sudo mkdir tribal
+
+22) sudo cp /home/ubuntu/tribalmnctest/frontend/dist /var/www/tribal -r
+
+23) sudo nginx -s reload
 
