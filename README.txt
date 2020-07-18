@@ -67,3 +67,68 @@ Abrir una ventana de terminal y ejecutar los siguientes comandos:
 31) cd /opt/wildfly/bin/
 
 32) ./jboss-cli.sh --connect --command="deploy --force /home/ubuntu/tribalmnctest/backend/src/Services/Implementation/target/mncBackEnd.war"
+
+33) admin
+
+34) admin
+
+Aqui ya tendremos desplegado y funcional el back end. Accessible en la dirección: localhost:8080
+
+
+----------FrontEnd
+
+Abrir una ventana de terminal y ejecutar los siguientes comandos
+
+1) sudo apt-get install -y nginx
+
+2) sudo apt-get -s clean 
+
+3) cd /etc/nginx/sites-available
+
+4) sudo nano tribal.com
+
+5) pegar el siguiente texto (sin incluir comillas): 
+
+"server {
+listen 3200;
+listen [::]:3200;
+root /var/www/tribal/dist;
+server_tokens off;
+index index.html index.htm;
+location / {
+# First attempt to server request as file, then
+# as directory, then fall back to displaying a 404.
+try_files $uri $uri/ /index.html =404;
+}
+}"
+
+6) teclear control + x
+
+7) y
+
+8) enter
+
+9) cd /etc/nginx/sites-enabled
+
+10) sudo ln -s ../sites-available/tribal.com
+
+11) sudo rm default
+
+12) sudo nginx -s reload
+
+13) cd /home/ubuntu/tribalmnctest/frontend
+
+14) sudo apt-get update
+
+15) sudo apt-get upgrade
+
+14) sudo apt install nodejs
+
+15) sudo apt install npm
+
+16) sudo npm install -g @angular/cli
+
+17) sudo npm install 
+
+18) ng build --prod
+

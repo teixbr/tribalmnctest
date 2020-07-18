@@ -433,7 +433,6 @@ target
 *.versions
 *.vscode
 */coverage
-*/dist
 */node_modules
 */platforms
 */plugins
