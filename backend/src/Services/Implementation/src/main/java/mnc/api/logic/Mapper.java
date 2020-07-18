@@ -11,6 +11,15 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * System:                 Mnc
+ * Name:                   Mapper
+ * Description:            Class for handling and formatting http response for the frontend
+ *
+ * @author teixbr
+ * @version 1.0
+ * @since 15/07/20
+ */
 public class Mapper
 {
     public static List<GroupedDto> mapResults( AppleBaseResult itunes, List<CrcBase> crc, List<TvMazeBase> tvMaze )

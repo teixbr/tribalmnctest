@@ -10,6 +10,15 @@ import mnc.api.utilities.MncLogger;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * System:                  Mnc
+ * Name:                    DaoTvMaze
+ * Description:             Base class for handling HTTP Get requests TvMaze' API
+ *
+ * @author teixbr
+ * @version 1.0
+ * @since 15/07/2
+ */
 public class DaoTvMaze extends Dao
 {
     private static final String basePath = "http://api.tvmaze.com/search/shows?";

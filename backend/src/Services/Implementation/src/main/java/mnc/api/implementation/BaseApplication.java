@@ -29,6 +29,7 @@ public class BaseApplication extends Application
 
     public BaseApplication()
     {
+        //handling Swagger's configuration
         final BeanConfig beanConfig = new BeanConfig();
         beanConfig.setVersion("v1");
         beanConfig.setSchemes(new String[]{"http"});
