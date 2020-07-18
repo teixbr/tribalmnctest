@@ -1,5 +1,7 @@
 package mnc.api.implementation;
 
+import io.swagger.jaxrs.config.BeanConfig;
+
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
@@ -25,15 +27,15 @@ public class BaseApplication extends Application
         return hash;
     }
 
-//    public BaseApplication()
-//    {
-//        final BeanConfig beanConfig = new BeanConfig();
-//        beanConfig.setVersion("v1");
-//        beanConfig.setSchemes(new String[]{"http"});
-//        beanConfig.setHost("http://localhost:8080");
-//        beanConfig.setBasePath("frolitBackEnd/api/swagger");
-//        beanConfig.setResourcePackage(BaseApplication.class.getPackage().getName());
-//        beanConfig.setScan(true);
-//    }
+    public BaseApplication()
+    {
+        final BeanConfig beanConfig = new BeanConfig();
+        beanConfig.setVersion("v1");
+        beanConfig.setSchemes(new String[]{"http"});
+        beanConfig.setHost("http://localhost:8080");
+        beanConfig.setBasePath("mncBackEnd/api/swagger");
+        beanConfig.setResourcePackage(BaseApplication.class.getPackage().getName());
+        beanConfig.setScan(true);
+    }
 }
 

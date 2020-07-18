@@ -1,5 +1,6 @@
 package mnc.api.implementation;
 
+import io.swagger.annotations.Api;
 import mnc.api.dao.DaoApple;
 import mnc.api.dao.DaoCrc;
 import mnc.api.dao.DaoTvMaze;
@@ -27,6 +28,7 @@ import java.util.List;
  * @version 1.0
  * @since 15/07/20
  */
+@Api(value = "search")
 @Path( "/search" )
 @Produces( MediaType.APPLICATION_JSON )
 @Consumes( MediaType.APPLICATION_JSON )
