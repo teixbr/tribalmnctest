@@ -1,0 +1,52 @@
+<div class="bg">
+
+  <div class="inputParametros">
+    <div class="textParametros">
+      <h1>Bienvenidos a mi solución para Tribal MnC.</h1>
+    </div>
+    <div class="textParametros">
+      <h2>Ingresa tus parámetros de busqueda y presiona enter</h2>
+    </div>
+    <div class="textParametros">
+      <mat-form-field appearance="outline" style="width:30% !important">
+        <mat-label>Parámetros</mat-label>
+        <input matInput #txtVal (keydown.enter)="search(txtVal.value)" name="search">
+      </mat-form-field>
+    </div>
+  </div>  
+
+  <div class="container-table100">
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style= "width:50%;">
+
+      <ng-container matColumnDef="fuente">
+        <th mat-header-cell *matHeaderCellDef> Fuente </th>
+          <td mat-cell *matCellDef="let element">
+            <img src="{{element.photo}}" width="100px" height="40px">
+          </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="vermas">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="primary" (click)="seeMore(element)">Ver Más</button>
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+    </table>
+
+    <mat-paginator class="pagination" [pageSize]="5" showFirstLastButtons></mat-paginator>
+
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>

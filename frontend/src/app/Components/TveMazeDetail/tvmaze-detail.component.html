@@ -1,0 +1,60 @@
+<div>
+    <h1>Información detallada de Tv Maze:</h1>
+
+    <mat-grid-list cols="2" rowHeight="3:1">
+      <mat-grid-tile>
+          <div>
+              <mat-form-field appearance="standard">
+                  <mat-label>Nombre:</mat-label>
+                  <input matInput value="{{ data.tvMazeInfo.show.name }}" disabled=true>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="standard">
+                  <mat-label>Idioma:</mat-label>
+                  <input matInput value="{{ data.tvMazeInfo.show.language }}" disabled=true>
+              </mat-form-field>
+              <br>
+          </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+          <div>
+              <mat-form-field appearance="standard">
+                  <mat-label>Género:</mat-label>
+                  <input matInput value="{{ data.tvMazeInfo.show.genres?.join(', ') }}" disabled=true>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="standard">
+                  <mat-label>Status:</mat-label>
+                  <input matInput value="{{ data.tvMazeInfo.show.status }}" disabled=true>
+              </mat-form-field>
+              <br>
+          </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+          <div>
+              <mat-form-field appearance="standard">
+                  <mat-label>Fecha de lanzamiento:</mat-label>
+                  <input matInput value="{{ data.tvMazeInfo.show.premiered }}" disabled=true>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="standard">
+                  <mat-label>País:</mat-label>
+                  <input matInput value="{{ data.tvMazeInfo.show.network?.country?.name }}" disabled=true>
+              </mat-form-field>
+          </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+          <div>
+              <mat-form-field appearance="standard">
+                  <mat-label>Canal:</mat-label>
+                  <input matInput value="{{ data.tvMazeInfo.show.network?.name }}" disabled=true>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="standard">
+                  <mat-label>Tipo:</mat-label>
+                  <input matInput value="{{ data.tvMazeInfo.show.type }}" disabled=true>
+              </mat-form-field>
+          </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+</div>

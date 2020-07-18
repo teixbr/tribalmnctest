@@ -1,0 +1,59 @@
+<div>
+    <h1>Información detallada de iTunes:</h1>
+    <mat-grid-list cols="2" rowHeight="3:1">
+      <mat-grid-tile>
+          <div>
+              <mat-form-field appearance="standard">
+                  <mat-label>Nombre del artista:</mat-label>
+                  <input matInput value="{{ data.itunesInfo.artistName }}" disabled=true>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="standard">
+                  <mat-label>Nombre del album:</mat-label>
+                  <input matInput value="{{ data.itunesInfo.collectionName }}" disabled=true>
+              </mat-form-field>
+              <br>
+          </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+          <div>
+              <mat-form-field appearance="standard">
+                  <mat-label>Género:</mat-label>
+                  <input matInput value="{{ data.itunesInfo.primaryGenreName }}" disabled=true>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="standard">
+                  <mat-label>Precio de la canción:</mat-label>
+                  <input matInput value="{{ data.itunesInfo.trackPrice }}" disabled=true>
+              </mat-form-field>
+              <br>
+          </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+          <div>
+              <mat-form-field appearance="standard">
+                  <mat-label>Fecha de lanzamiento:</mat-label>
+                  <input matInput value="{{ data.itunesInfo.releaseDate }}" disabled=true>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="standard">
+                  <mat-label>País:</mat-label>
+                  <input matInput value="{{ data.itunesInfo.country }}" disabled=true>
+              </mat-form-field>
+          </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+          <div>
+              <mat-form-field appearance="standard">
+                  <mat-label>Precio del album:</mat-label>
+                  <input matInput value="{{ data.itunesInfo.collectionPrice }}" disabled=true>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="standard">
+                  <mat-label>Moneda:</mat-label>
+                  <input matInput value="{{ data.itunesInfo.currency }}" disabled=true>
+              </mat-form-field>
+          </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+</div>

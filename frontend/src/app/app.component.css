@@ -1,0 +1,71 @@
+.container-table100 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2em;
+  }
+
+  .pagination {
+    width: 50.01%;
+  }
+
+  .inputParametros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2em;
+  }
+
+  .textParametros {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .mat-column-vermas {
+    width: 20%;
+  }
+
+  .mat-column-nombre {
+    flex: 0 0 500px;
+    width: 35%;
+  }
+
+  .bg {
+    background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    background-attachment: fixed;
+    height: 100%;
+  }
+
+  .controles-container{
+    width: 100%;
+    padding: 5%;    
+}
+
+.overlay{
+    height:100vh;
+    width:100%;
+    background-color:rgba(0, 0, 0, 0.286);
+    z-index:    10;
+    top:        0; 
+    left:       0; 
+    position:   fixed;
+  }
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}

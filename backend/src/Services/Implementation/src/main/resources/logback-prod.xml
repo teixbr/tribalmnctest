@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="ERROR-LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <file>/opt/wildfly/standalone/log/mncError.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>/opt/wildfly/standalone/log/mncError%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{dd/MM/yyyy HH:mm:ss.SSS} | [%thread] | %-5level | %n%caller{5} - %msg%n%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="DEBUG-LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <file>/opt/wildfly/standalone/log/mncDebug.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>/opt/wildfly/standalone/log/mncDebug%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{dd/MM/yyyy HH:mm:ss.SSS} | [%thread] | %-5level | %class{20}.%M | %n%caller{5} - %msg%n%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="DEBUG-HTML-LOG" class="ch.qos.logback.core.FileAppender">
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.access.html.HTMLLayout">
+                <!--<pattern>%relative%thread%mdc%level%logger%msg</pattern>-->
+            </layout>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <file>mncTest.html</file>
+    </appender>
+
+    <appender name="INFO-LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <file>/opt/wildfly/standalone/log/mncInfo.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>/opt/wildfly/standalone/log/mncInfo%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{dd/MM/yyyy HH:mm:ss.SSS} | [%thread] | %-5level | %n%caller{5} - %msg%n%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="DEBUG-ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="DEBUG-LOG"/>
+    </appender>
+
+    <appender name="ERROR-ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="ERROR-LOG"/>
+    </appender>
+
+    <appender name="INFO-ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="INFO-LOG"/>
+    </appender>
+
+    <appender name="DEBUG-HTML-ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="DEBUG-HTML-LOG"/>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="ERROR-ASYNC"/>
+        <appender-ref ref="INFO-ASYNC"/>
+        <appender-ref ref="DEBUG-ASYNC"/>
+        <appender-ref ref="DEBUG-HTML-ASYNC"/>
+    </root>
+
+</configuration>
