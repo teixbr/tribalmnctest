@@ -28,42 +28,42 @@ Abrir una ventana de terminal y ejecutar los siguientes comandos:
 
 12) sudo cp /opt/wildfly/docs/contrib/scripts/systemd/wildfly.conf /etc/wildfly/
 
-14) sudo cp /opt/wildfly/docs/contrib/scripts/systemd/launch.sh /opt/wildfly/bin/
+13) sudo cp /opt/wildfly/docs/contrib/scripts/systemd/launch.sh /opt/wildfly/bin/
 
-15) sudo sh -c 'chmod +x /opt/wildfly/bin/*.sh'
+14) sudo sh -c 'chmod +x /opt/wildfly/bin/*.sh'
 
-16) sudo cp /opt/wildfly/docs/contrib/scripts/systemd/wildfly.service /etc/systemd/system/
+15) sudo cp /opt/wildfly/docs/contrib/scripts/systemd/wildfly.service /etc/systemd/system/
 
-17) sudo systemctl daemon-reload
+16) sudo systemctl daemon-reload
 
-18) sudo systemctl start wildfly
+17) sudo systemctl start wildfly
 
-19) sudo apt install maven
+18) sudo apt install maven
 
-20) sudo apt install git
+19) sudo apt install git
 
-21) git clone https://github.com/teixbr/tribalmnctest.git
+20) git clone https://github.com/teixbr/tribalmnctest.git
 
-22) cd tribalmnctest/backend/src
+21) cd tribalmnctest/backend/src
 
-23) mvn clean install 
+22) mvn clean install 
 
-24) sudo /opt/wildfly/bin/add-user.sh
+23) sudo /opt/wildfly/bin/add-user.sh
 
-25) a
+24) a
 
-26) admin
+25) admin
 
-27) a
+26) a
 
-28) admin
+27) admin
 
-29) y
+28) y
 
-30) presionar enter
+29) presionar enter
 
-31) n
+30) n
 
-24) cd /opt/wildfly/bin/
+31) cd /opt/wildfly/bin/
 
-24) ./jboss-cli.sh --connect --command="deploy --force /home/ubuntu/tribalmnctest/backend/src/Services/Implementation/target/mncBackEnd.war"
+32) ./jboss-cli.sh --connect --command="deploy --force /home/ubuntu/tribalmnctest/backend/src/Services/Implementation/target/mncBackEnd.war"
