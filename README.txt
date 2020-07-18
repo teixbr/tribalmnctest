@@ -72,7 +72,7 @@ Abrir una ventana de terminal y ejecutar los siguientes comandos:
 
 34) admin
 
-Aqui ya tendremos desplegado y funcional el back end. Accessible en la dirección: localhost:8080
+Aqui ya tendremos desplegado y funcional el backend. Accessible en la dirección: localhost:8080
 
 
 ----------FrontEnd
@@ -138,3 +138,4 @@ try_files $uri $uri/ /index.html =404;
 
 23) sudo nginx -s reload
 
+Con estas instrucciones tendremos desplegado el frontend en la dirección localhost:3200
