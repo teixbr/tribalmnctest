@@ -21,11 +21,9 @@ public class CORSFilter implements ContainerResponseFilter
     public void filter( ContainerRequestContext containerRequestContext, ContainerResponseContext response )
     {
         response.getHeaders().add( "Access-Control-Allow-Origin", "*" );
-        response.getHeaders().add( "Access-Control-Allow-Headers", "Origin, X-Atmosphere-tracking-id, " +
-                                   "X-Atmosphere-Framework, X-Cache-Date, Content-Type, X-Atmosphere-Transport, *" );
+        response.getHeaders().add( "Access-Control-Allow-Headers", "*" );
         response.getHeaders().add( "Access-Control-Allow-Credentials","true" );
         response.getHeaders().add( "Access-Control-Allow-Methods","POST, GET, OPTIONS , PUT" );
-        response.getHeaders().add( "Access-Control-Request-Headers", "Origin, X-Atmosphere-tracking-id, " +
-                                     "X-Atmosphere-Framework, X-Cache-Date, Content-Type, X-Atmosphere-Transport,  *" );
+        response.getHeaders().add( "Access-Control-Request-Headers", "*" );
     }
 }
