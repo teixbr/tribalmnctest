@@ -21,7 +21,7 @@ const httpOptions = {
 
 @Injectable()
 export class AppService {
-  url = 'http://ec2-18-222-140-225.us-east-2.compute.amazonaws.com:8080/mncBackEnd/api/search/data/';  // URL to web api
+  url = 'http://localhost:8080/mncBackEnd/api/search/data/';  // URL to web api
   private handleError: HandleError;
 
   constructor(
